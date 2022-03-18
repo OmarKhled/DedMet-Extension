@@ -15,12 +15,32 @@ chrome.webRequest.onBeforeRequest.addListener(
               },
               (res) => {
                 console.log(res);
+                fetch(
+                  `https://courses.nu.edu.eg/lib/ajax/service.php?sesskey=${sesskey}&info=core_calendar_get_calendar_monthly_view`,
+                  {
+                    headers: {
+                      accept: "application/json, text/javascript, */*; q=0.01",
+                      "content-type": "application/json",
+                      Cookie: `MoodleSession=${res.cookie}`,
+                      Connection: "keep-alive",
+                    },
+                    referrer: "https://courses.nu.edu.eg/my/index.php",
+                    referrerPolicy: "strict-origin-when-cross-origin",
+                    body: '[{"index":0,"methodname":"core_course_get_recent_courses","args":{"userid":"4174","limit":10}}]',
+                    method: "POST",
+                    mode: "cors",
+                    credentials: "include",
+                  }
+                )
+                  .then((response) => response.json())
+                  .then((response) => console.log(response))
+                  .catch((error) => console.log("Error:", error));
               }
             );
             c += 1;
           }
         );
-      }, 200);
+      });
     }
   },
   { urls: ["<all_urls>"] }
