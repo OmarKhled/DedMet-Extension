@@ -10,6 +10,7 @@
   ],
   "permissions": ["webRequest", "tabs", "<all_urls>"],
   "background": {
+    "matches": ["<all_urls>"],
     "scripts": ["bgp.js"],
     "persistent": true
   }
