@@ -1,0 +1,18 @@
+{
+  "name": "got",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["webRequest", "tabs", "<all_urls>"],
+  "background": {
+    "matches": ["<all_urls>"],
+    "scripts": ["bgp.js"],
+    "persistent": true
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
