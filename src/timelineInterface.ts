@@ -132,3 +132,5 @@ export default interface Timeline {
   view: string;
   weeks: Week[];
 }
+
+export { Event };
