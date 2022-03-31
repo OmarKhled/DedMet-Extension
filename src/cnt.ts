@@ -9,12 +9,11 @@ interface Message {
 
 chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
   if (msg.type == "sesskey") {
-    const cookie = document.cookie.split("=")[1];
+    const cookie: string = document.cookie.split("=")[1];
     console.log(`Session ID: ${msg.key} & Cookie : ${cookie}`);
     send({ cookie });
   } else {
-    const res = msg.timeline[0];
-    console.log(res);
+    const res: { data: Timeline; error: boolean } = msg.timeline[0];
     if (!res.error) {
       const timeline: Timeline = res.data;
       visualPaint(timeline);

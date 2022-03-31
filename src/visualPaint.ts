@@ -1,9 +1,6 @@
 import Timeline from "./timelineInterface";
-import { globby } from "globby";
-import { render } from "./ejs.min.js";
 
 import li from "./html/EventElement.ejs";
-import { EvalDevToolModulePlugin } from "webpack";
 
 export default (timeline: Timeline): void => {
   // * Fetching the element before which the timeline will be added

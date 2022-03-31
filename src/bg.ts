@@ -1,5 +1,3 @@
-///<reference types="chrome"/>
-
 import timelineFetchOptions from "./timelineFetchOptions";
 
 interface requestDetails {
@@ -49,12 +47,15 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
     });
   }, 200);
 
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id as number, {
-      timeline: res,
-      type: "timeline",
-    });
-  });
+  chrome.tabs.query(
+    { active: true, currentWindow: true },
+    (tabs: chrome.tabs.Tab[]) => {
+      chrome.tabs.sendMessage(tabs[0].id as number, {
+        timeline: res,
+        type: "timeline",
+      });
+    }
+  );
 };
 
 chrome.webRequest.onBeforeRequest.addListener(listener, {
