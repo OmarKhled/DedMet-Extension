@@ -1,0 +1,43 @@
+<div id="timeline" class="block_html block mb-3">
+  <div class="header">
+    <div class="title">
+      <h2 class="d-inline">Timeline Widget</h2>
+    </div>
+  </div>
+  <div style="padding-left: 10px; margin-top: 1rem;">
+    <% for(var i=0; i<data.timeline.weeks.length; i++) {%>
+      <% for(var l=0; l<data.timeline.weeks[i].days.length; l++) {%>
+        <h5>
+          <% if(data.timeline.weeks[i].days[l].events.length> 0) { %>
+            <%= data.timeline.weeks[i].days[l].viewdaylinktitle?.replace('events','') %>
+              <% } %>
+        </h5>
+        <% for(var o=0; o<data.timeline.weeks[i].days[l].events.length; o++) {%>
+          <div class=" eventElement mt-2">
+            <div style=" display: flex; gap: 1rem">
+              <div class="eventIcon">
+                <img src="https://courses.nu.edu.eg/theme/image.php/adaptable/assign/1628408864/icon" width="25"
+                  height="25" style="max-width: fit-content;" />
+              </div>
+              <div class="eventDetails text-truncate">
+                <h5 class="text-truncate" style="margin: 0;"> <a
+                    href="<%= data.timeline.weeks[i].days[l].events[o].url%>" style="color: #4a4a4a;">
+                    <span class="text-truncate">
+                      <%= data.timeline.weeks[i].days[l].events[o].popupname%>
+                    </span>
+                  </a></h5>
+                <q style="margin-bottom: 0.42rem; display: block;" class="text-muted muted">
+                  <%=data.timeline.weeks[i].days[l].events[o].eventtype.charAt(0).toUpperCase() +
+                    data.timeline.weeks[i].days[l].events[o].eventtype.slice(1)%>
+                </q>
+                <a class="d-block" href="<%= data.timeline.weeks[i].days[l].events[o].url%>"
+                  style="padding-left: -.4rem;"> Go to event</a>
+
+              </div>
+            </div>
+          </div>
+          <%} %>
+            <%} %>
+              <%} %>
+                </p>
+  </div>

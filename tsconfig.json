@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    // "noImplicitAny": true,
+    "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
     "allowJs": true,
-    // "moduleResolution": "node",
-    "lib": ["es2017", "es6", "es5", "dom"],
-    // "rootDir": "./src",          
+    "moduleResolution": "node",
+    "lib": ["es2017", "es6", "es5", "dom"],      
     "outDir": "./dist",          
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
