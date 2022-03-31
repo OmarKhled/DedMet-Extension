@@ -169,7 +169,6 @@ chrome.runtime.onMessage.addListener(function (msg, s, send) {
     }
     else {
         var res = msg.timeline[0];
-        console.log(res);
         if (!res.error) {
             var timeline = res.data;
             (0,_visualPaint__WEBPACK_IMPORTED_MODULE_0__["default"])(timeline);

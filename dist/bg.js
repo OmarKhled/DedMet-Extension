@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (cookie) {
+    var date = new Date();
     return {
         headers: {
             accept: "application/json, text/javascript, */*; q=0.01",
@@ -22,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         referrer: "https://courses.nu.edu.eg/my/index.php",
         referrerPolicy: "strict-origin-when-cross-origin",
-        body: '[{"index":0,"methodname":"core_calendar_get_calendar_monthly_view","args":{"year":2022,"month":4,"courseid":1,"categoryid":0,"includenavigation":true,"mini":true}}]',
+        body: "[{\"index\":0,\"methodname\":\"core_calendar_get_calendar_monthly_view\",\"args\":{\"year\":".concat(date.getFullYear(), ",\"month\":").concat(date.getMonth() + 1, ",\"courseid\":1,\"categoryid\":0,\"includenavigation\":true,\"mini\":true}}]"),
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -96,7 +97,6 @@ var __webpack_exports__ = {};
   \*******************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _timelineFetchOptions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./timelineFetchOptions */ "./src/timelineFetchOptions.ts");
-///<reference types="chrome"/>
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
