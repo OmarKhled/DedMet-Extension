@@ -1,5 +1,5 @@
 import Timeline from "./timelineInterface";
-import visualPaint from "./visualPaint";
+import { visualPaint, initTimeline } from "./visualPaint";
 
 interface Message {
   type: string;
@@ -12,6 +12,7 @@ chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
     const cookie: string = document.cookie.split("=")[1];
     console.log(`Session ID: ${msg.key} & Cookie : ${cookie}`);
     send({ cookie });
+    initTimeline();
   } else {
     const res: { data: Timeline; error: boolean } = msg.timeline[0];
     if (!res.error) {

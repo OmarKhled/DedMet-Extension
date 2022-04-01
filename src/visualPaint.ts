@@ -1,15 +1,12 @@
 import Timeline from "./timelineInterface";
 
-import li from "./html/EventElement.ejs";
+import timelineContainer from "./html/Timeline.ejs";
+import timelineEvents from "./html/EventElement.ejs";
 
-export default (timeline: Timeline): void => {
+export const visualPaint = (timeline: Timeline): void => {
   // * Fetching the element before which the timeline will be added
-  const container: Element | null = document.querySelector(
-    "aside#block-region-side-post"
-  );
-  const calendar: Element | null = document.querySelector(
-    "section.block_calendar_month"
-  );
+  const container: Element | null =
+    document.querySelector("#timeline .content");
 
   // * Constructing the container of the timeline
   const filteredTimeline: Timeline = {
@@ -41,9 +38,29 @@ export default (timeline: Timeline): void => {
       };
     }),
   };
-  console.log(filteredTimeline);
+  const timelineEventsElement: HTMLDivElement = document.createElement("div");
+  timelineEventsElement.innerHTML = timelineEvents({
+    timeline: filteredTimeline,
+  });
+
+  container
+    ? (container.innerHTML = timelineEvents({
+        timeline: filteredTimeline,
+      }))
+    : "";
+};
+
+export const initTimeline = () => {
+  // * Fetching the element before which the timeline will be added
+  const container: Element | null = document.querySelector(
+    "aside#block-region-side-post"
+  );
+  const calendar: Element | null = document.querySelector(
+    "section.block_calendar_month"
+  );
+
   const timelineElement: HTMLDivElement = document.createElement("div");
-  timelineElement.innerHTML = li({ timeline: filteredTimeline });
+  timelineElement.innerHTML = timelineContainer();
 
   container?.insertBefore(timelineElement, calendar);
 };
