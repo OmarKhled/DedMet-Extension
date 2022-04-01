@@ -134,17 +134,22 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 
+var tabId;
 // Listener For Http Requests
 var listener = function (_a) {
     var url = _a.url;
     if (url.includes("core_calendar_get_calendar_monthly_view")) {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            tabId = tabs[0].id;
+            console.log(tabId);
+        });
         // Getting Session Key
         var sessKey_1 = url.split("=")[1].split("&")[0];
         setTimeout(function () {
             // Fetching the current chrome tab
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
                 // Sending a message to that tab
-                chrome.tabs.sendMessage(tabs[0].id, {
+                chrome.tabs.sendMessage(tabId, {
                     key: sessKey_1,
                     type: "sesskey",
                 }, function (res) {
@@ -170,21 +175,38 @@ var fetchTimelineData = function (sesskey, cookie) { return __awaiter(void 0, vo
                 console.log(res);
                 setTimeout(function () {
                     chrome.webRequest.onBeforeRequest.addListener(listener, {
-                        urls: ["<all_urls>"],
+                        urls: ["*://courses.nu.edu.eg/*"],
                     });
                 }, 200);
                 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                    chrome.tabs.sendMessage(tabs[0].id, {
-                        timeline: res,
-                        type: "timeline",
-                    });
+                    console.log("starts");
+                    if (tabId == tabs[0].id) {
+                        console.log("matches");
+                        chrome.tabs.sendMessage(tabs[0].id, {
+                            timeline: res,
+                            type: "timeline",
+                        });
+                    }
+                    else {
+                        console.log("doesn't match");
+                        var onActivated_1 = function (activatedTab) {
+                            if (activatedTab.tabId == tabId) {
+                                chrome.tabs.onActivated.removeListener(onActivated_1);
+                                chrome.tabs.sendMessage(tabId, {
+                                    timeline: res,
+                                    type: "timeline",
+                                });
+                            }
+                        };
+                        chrome.tabs.onActivated.addListener(onActivated_1);
+                    }
                 });
                 return [2 /*return*/];
         }
     });
 }); };
 chrome.webRequest.onBeforeRequest.addListener(listener, {
-    urls: ["<all_urls>"],
+    urls: ["*://courses.nu.edu.eg/*"],
 });
 
 })();

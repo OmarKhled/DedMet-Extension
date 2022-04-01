@@ -31,9 +31,8 @@ __p += '\n        <div class=" eventElement mt-2">\n          <div style=" displ
 ((__t = ( data.timeline.weeks[i].days[l].events[o].url)) == null ? '' : __t) +
 '"\n                  style="color: #4a4a4a;">\n                  <span class="text-truncate">\n                    ' +
 ((__t = ( data.timeline.weeks[i].days[l].events[o].popupname)) == null ? '' : __t) +
-'\n                  </span>\n                </a></h5>\n              <q style="margin-bottom: 0.42rem; display: block;" class="text-muted muted">\n                ' +
-((__t = (data.timeline.weeks[i].days[l].events[o].eventtype.charAt(0).toUpperCase() +
-                  data.timeline.weeks[i].days[l].events[o].eventtype.slice(1))) == null ? '' : __t) +
+'\n                  </span>\n                </a></h5>\n              <q style="margin-bottom: 0.42rem; display: block;" class="text-muted muted text-truncate">\n                ' +
+((__t = (data.timeline.weeks[i].days[l].events[o].name )) == null ? '' : __t) +
 '\n              </q>\n              <a class="d-block" href="' +
 ((__t = ( data.timeline.weeks[i].days[l].events[o].url)) == null ? '' : __t) +
 '"\n                style="padding-left: -.4rem;"> Go to event</a>\n\n            </div>\n          </div>\n        </div>\n        ';
@@ -95,22 +94,37 @@ var __assign = (undefined && undefined.__assign) || function () {
 var visualPaint = function (timeline) {
     // * Fetching the element before which the timeline will be added
     var container = document.querySelector("#timeline .content");
-    // * Constructing the container of the timeline
+    // * The function that gets the html content of every event
+    var httpGet = function (url) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", url, false);
+        xmlhttp.send();
+        while (xmlhttp.readyState !== 4) {
+            if (xmlhttp.readyState === 4) {
+                return xmlhttp.responseText;
+            }
+        }
+        return xmlhttp.responseText;
+    };
+    // * Feltering the content of the timeline
     var filteredTimeline = __assign(__assign({}, timeline), { weeks: timeline.weeks.map(function (week) {
             return __assign(__assign({}, week), { days: week.days.map(function (day) {
                     return __assign(__assign({}, day), { events: day.events.filter(function (event) {
                             if (day.timestamp + 86400 >= Date.now() / 1000 &&
                                 !["attendance", "open", "expectcompletionon"].includes(event.eventtype)) {
-                                console.log(["attendance", "open", "expectcompletionon"].includes(event.eventtype), event.eventtype);
-                                return true;
+                                var eventHtmlRes = httpGet(event.url);
+                                var matches = eventHtmlRes.match("completed|submitted|Submitted|Finished|Completed");
+                                console.log(matches === null || matches === void 0 ? void 0 : matches.length, event.name);
+                                if ((matches === null || matches === void 0 ? void 0 : matches.length) > 0) {
+                                    return false;
+                                }
+                                else {
+                                    return true;
+                                }
                             }
                         }) });
                 }) });
         }) });
-    var timelineEventsElement = document.createElement("div");
-    timelineEventsElement.innerHTML = (0,_html_EventElement_ejs__WEBPACK_IMPORTED_MODULE_1__["default"])({
-        timeline: filteredTimeline,
-    });
     container
         ? (container.innerHTML = (0,_html_EventElement_ejs__WEBPACK_IMPORTED_MODULE_1__["default"])({
             timeline: filteredTimeline,
@@ -203,8 +217,12 @@ chrome.runtime.onMessage.addListener(function (msg, s, send) {
     }
     else {
         var res = msg.timeline[0];
+        console.log("1");
+        console.log(res);
+        console.log("2");
         if (!res.error) {
             var timeline = res.data;
+            console.log("3");
             (0,_visualPaint__WEBPACK_IMPORTED_MODULE_0__.visualPaint)(timeline);
         }
         else {

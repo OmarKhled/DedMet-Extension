@@ -8,7 +8,19 @@ export const visualPaint = (timeline: Timeline): void => {
   const container: Element | null =
     document.querySelector("#timeline .content");
 
-  // * Constructing the container of the timeline
+  // * The function that gets the html content of every event
+  const httpGet = (url: string): string => {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", url, false);
+    xmlhttp.send();
+    while (xmlhttp.readyState !== 4) {
+      if (xmlhttp.readyState === 4) {
+        return xmlhttp.responseText;
+      }
+    }
+    return xmlhttp.responseText;
+  };
+  // * Feltering the content of the timeline
   const filteredTimeline: Timeline = {
     ...timeline,
     weeks: timeline.weeks.map((week) => {
@@ -24,13 +36,16 @@ export const visualPaint = (timeline: Timeline): void => {
                   event.eventtype
                 )
               ) {
-                console.log(
-                  ["attendance", "open", "expectcompletionon"].includes(
-                    event.eventtype
-                  ),
-                  event.eventtype
+                const eventHtmlRes: string = httpGet(event.url);
+                const matches = eventHtmlRes.match(
+                  "completed|submitted|Submitted|Finished|Completed"
                 );
-                return true;
+                console.log(matches?.length, event.name);
+                if ((matches?.length as number) > 0) {
+                  return false;
+                } else {
+                  return true;
+                }
               }
             }),
           };
@@ -38,10 +53,6 @@ export const visualPaint = (timeline: Timeline): void => {
       };
     }),
   };
-  const timelineEventsElement: HTMLDivElement = document.createElement("div");
-  timelineEventsElement.innerHTML = timelineEvents({
-    timeline: filteredTimeline,
-  });
 
   container
     ? (container.innerHTML = timelineEvents({

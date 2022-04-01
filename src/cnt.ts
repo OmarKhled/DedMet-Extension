@@ -15,8 +15,12 @@ chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
     initTimeline();
   } else {
     const res: { data: Timeline; error: boolean } = msg.timeline[0];
+    console.log("1");
+    console.log(res);
+    console.log("2");
     if (!res.error) {
       const timeline: Timeline = res.data;
+      console.log("3");
       visualPaint(timeline);
     } else {
       console.log("Fetching Error Occured");

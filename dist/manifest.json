@@ -4,13 +4,13 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["*://courses.nu.edu.eg/*"],
       "js": ["cnt.js"]
     }
   ],
-  "permissions": ["webRequest", "tabs", "<all_urls>"],
+  "permissions": ["webRequest", "tabs", "*://courses.nu.edu.eg/*"],
   "background": {
-    "matches": ["<all_urls>"],
+    "matches": ["*://courses.nu.edu.eg/*"],
     "scripts": ["bg.js"],
     "persistent": true
   },

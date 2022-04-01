@@ -20,9 +20,8 @@
                     <%= data.timeline.weeks[i].days[l].events[o].popupname%>
                   </span>
                 </a></h5>
-              <q style="margin-bottom: 0.42rem; display: block;" class="text-muted muted">
-                <%=data.timeline.weeks[i].days[l].events[o].eventtype.charAt(0).toUpperCase() +
-                  data.timeline.weeks[i].days[l].events[o].eventtype.slice(1)%>
+              <q style="margin-bottom: 0.42rem; display: block;" class="text-muted muted text-truncate">
+                <%=data.timeline.weeks[i].days[l].events[o].name %>
               </q>
               <a class="d-block" href="<%= data.timeline.weeks[i].days[l].events[o].url%>"
                 style="padding-left: -.4rem;"> Go to event</a>
