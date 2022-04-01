@@ -155,6 +155,7 @@ var listener = function (_a) {
                 }, function (res) {
                     console.log(res);
                     fetchTimelineData(sessKey_1, res.cookie);
+                    return Promise.resolve("Dummy response to keep the console quiet");
                 });
             });
         }, 200);

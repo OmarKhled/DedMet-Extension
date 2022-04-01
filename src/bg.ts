@@ -31,6 +31,7 @@ const listener = ({ url }: requestDetails): void => {
             (res) => {
               console.log(res);
               fetchTimelineData(sessKey, res.cookie);
+              return Promise.resolve("Dummy response to keep the console quiet");
             }
           );
         }

@@ -26,4 +26,5 @@ chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
       console.log("Fetching Error Occured");
     }
   }
+  return true;
 });

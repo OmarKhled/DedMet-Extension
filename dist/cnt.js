@@ -229,6 +229,7 @@ chrome.runtime.onMessage.addListener(function (msg, s, send) {
             console.log("Fetching Error Occured");
         }
     }
+    return Promise.resolve("Dummy response to keep the console quiet");
 });
 
 })();
