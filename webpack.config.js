@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: false,
   entry: {
     bg: "./src/bg.ts",
