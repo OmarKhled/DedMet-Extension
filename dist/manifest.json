@@ -5,20 +5,18 @@
   "description": "DedMet is an extension that helps Nile University Students in tracking deadlines and assesments",
   "content_scripts": [
     {
-      "matches": ["*://courses.nu.edu.eg/*"],
+      "matches": ["*://courses.nu.edu.eg/my/index.php"],
       "run_at": "document_start",
       "js": ["cnt.js"]
     }
   ],
   "icons": {
-    "29": "/icons/29.png",
-    "65": "/icons/65.png",
-    "128": "/icons/128.png"
+    "1062": "/icons/1062.png"
   },
   "permissions": ["webRequest", "tabs"],
-  "host_permissions": ["*://courses.nu.edu.eg/*"],
+  "host_permissions": ["*://courses.nu.edu.eg/my/index.php"],
   "background": {
-    "matches": ["*://courses.nu.edu.eg/*"],
+    "matches": ["*://courses.nu.edu.eg/my/index.php"],
     "service_worker": "bg.js"
   },
   "content_security_policy": {

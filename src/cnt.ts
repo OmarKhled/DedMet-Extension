@@ -7,6 +7,7 @@ interface Message {
   timeline: { data: Timeline; error: boolean }[];
 }
 
+chrome.runtime.sendMessage({ msg: window.location.pathname }, (res) => {});
 chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
   if (msg.type == "sesskey") {
     const cookie: string = document.cookie.split("=")[1];
@@ -15,12 +16,9 @@ chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
     initTimeline();
   } else {
     const res: { data: Timeline; error: boolean } = msg.timeline[0];
-    console.log("1");
     console.log(res);
-    console.log("2");
     if (!res.error) {
       const timeline: Timeline = res.data;
-      console.log("3");
       visualPaint(timeline);
     } else {
       console.log("Fetching Error Occured");

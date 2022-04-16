@@ -31,7 +31,9 @@ const listener = ({ url }: requestDetails): void => {
             (res) => {
               console.log(res);
               fetchTimelineData(sessKey, res.cookie);
-              return Promise.resolve("Dummy response to keep the console quiet");
+              return Promise.resolve(
+                "Dummy response to keep the console quiet"
+              );
             }
           );
         }
@@ -50,11 +52,11 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
   const res = await json.json();
   console.log(res);
 
-  setTimeout(() => {
-    chrome.webRequest.onBeforeRequest.addListener(listener, {
-      urls: ["*://courses.nu.edu.eg/*"],
-    });
-  }, 200);
+  // setTimeout(() => {
+  //   chrome.webRequest.onBeforeRequest.addListener(listener, {
+  //     urls: ["*://courses.nu.edu.eg/*"],
+  //   });
+  // }, 200);
 
   chrome.tabs.query(
     { active: true, currentWindow: true },
@@ -83,6 +85,13 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
   );
 };
 
-chrome.webRequest.onBeforeRequest.addListener(listener, {
-  urls: ["*://courses.nu.edu.eg/*"],
+chrome.runtime.onMessage.addListener(({ msg }: { msg: string }, s, send) => {
+  console.log(msg);
+  chrome.webRequest.onBeforeRequest.removeListener(listener);
+  if (msg == "/my/index.php") {
+    chrome.webRequest.onBeforeRequest.addListener(listener, {
+      urls: ["*://courses.nu.edu.eg/*"],
+    });
+  }
+  send("hello");
 });
