@@ -62,10 +62,19 @@ export const visualPaint = (timeline: Timeline): void => {
 };
 
 export const initTimeline = () => {
+  // * Adding the container in case no aside elements exists
+  if (!document.querySelector("aside#block-region-side-post")) {
+    const aside: HTMLElement = document.createElement("aside");
+    aside.setAttribute("id", "block-region-side-post");
+    aside.setAttribute("class", "col-3 d-print-none block-region");
+    document.querySelector("#region-main")?.setAttribute("class", "col-9");
+    document.querySelector("#page-content")?.appendChild(aside);
+  }
   // * Fetching the element before which the timeline will be added
   const container: Element | null = document.querySelector(
     "aside#block-region-side-post"
   );
+  console.log("container", container);
   const calendar: Element | null = document.querySelector(
     "section.block_calendar_month"
   );
@@ -73,5 +82,10 @@ export const initTimeline = () => {
   const timelineElement: HTMLDivElement = document.createElement("div");
   timelineElement.innerHTML = timelineContainer();
 
-  container?.insertBefore(timelineElement, calendar);
+  container?.insertBefore(
+    timelineElement,
+    calendar
+      ? calendar
+      : document.querySelector("aside#block-region-side-post a:first-child")
+  );
 };

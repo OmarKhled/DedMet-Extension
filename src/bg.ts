@@ -4,9 +4,12 @@ interface requestDetails {
   url: string;
 }
 let tabId: number;
+//
+let sessKeyFound: boolean = false;
 // Listener For Http Requests
 const listener = ({ url }: requestDetails): void => {
-  if (url.includes("core_calendar_get_calendar_monthly_view")) {
+  if (url.includes("sesskey") && !sessKeyFound) {
+    sessKeyFound = true;
     chrome.tabs.query(
       { active: true, currentWindow: true },
       (tabs: chrome.tabs.Tab[]) => {
