@@ -54,8 +54,10 @@ export const visualPaint = (timeline: Timeline): void => {
     }),
   };
 
+  document.getElementById("timeline-spinner")?.remove();
+
   container
-    ? (container.innerHTML = timelineEvents({
+    ? (container.innerHTML += timelineEvents({
         timeline: filteredTimeline,
       }))
     : "";

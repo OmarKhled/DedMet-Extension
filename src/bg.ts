@@ -8,6 +8,7 @@ let tabId: number;
 let sessKeyFound: boolean = false;
 // Listener For Http Requests
 const listener = ({ url }: requestDetails): void => {
+  console.log("first");
   if (url.includes("sesskey") && !sessKeyFound) {
     sessKeyFound = true;
     chrome.tabs.query(
@@ -47,13 +48,22 @@ const listener = ({ url }: requestDetails): void => {
 
 const fetchTimelineData = async (sesskey: string, cookie: string) => {
   chrome.webRequest.onBeforeRequest.removeListener(listener);
-  const json = await fetch(
-    `https://courses.nu.edu.eg/lib/ajax/service.php?sesskey=${sesskey}&info=core_calendar_get_calendar_monthly_view`,
-    timelineFetchOptions(cookie)
-  );
+  sessKeyFound = false;
+  const date: Date = new Date();
+  const months: number[] = [date.getMonth() + 1, date.getMonth() + 2];
+  const timelineData: any[] = [];
+  months.forEach(async (month) => {});
 
-  const res = await json.json();
-  console.log(res);
+  for (let index = 0; index < months.length; index++) {
+    const month = months[index];
+    const json = await fetch(
+      `https://courses.nu.edu.eg/lib/ajax/service.php?sesskey=${sesskey}&info=core_calendar_get_calendar_monthly_view`,
+      timelineFetchOptions(cookie, month)
+    );
+    const res = await json.json();
+    timelineData.push(res[0]);
+  }
+  console.log(timelineData);
 
   // setTimeout(() => {
   //   chrome.webRequest.onBeforeRequest.addListener(listener, {
@@ -68,7 +78,7 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
       if (tabId == (tabs[0].id as number)) {
         console.log("matches");
         chrome.tabs.sendMessage(tabs[0].id as number, {
-          timeline: res,
+          timeline: timelineData,
           type: "timeline",
         });
       } else {
@@ -77,7 +87,7 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
           if (activatedTab.tabId == tabId) {
             chrome.tabs.onActivated.removeListener(onActivated);
             chrome.tabs.sendMessage(tabId as number, {
-              timeline: res,
+              timeline: timelineData,
               type: "timeline",
             });
           }

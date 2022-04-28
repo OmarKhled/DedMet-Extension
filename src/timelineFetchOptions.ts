@@ -1,4 +1,4 @@
-export default (cookie: string): any => {
+export default (cookie: string, month: number): any => {
   const date: Date = new Date();
   return {
     headers: {
@@ -10,7 +10,8 @@ export default (cookie: string): any => {
     referrer: "https://courses.nu.edu.eg/my/index.php",
     referrerPolicy: "strict-origin-when-cross-origin",
     body: `[{"index":0,"methodname":"core_calendar_get_calendar_monthly_view","args":{"year":${date.getFullYear()},"month":${
-      date.getMonth() + 1
+      // date.getMonth() + 1
+      month
     },"courseid":1,"categoryid":0,"includenavigation":true,"mini":true}}]`,
     method: "POST",
     mode: "cors",
