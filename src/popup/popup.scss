@@ -1,0 +1,23 @@
+main {
+  margin-top: 0.4rem;
+}
+label {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+header {
+  display: block;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+form#licenseForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  display: none;
+}

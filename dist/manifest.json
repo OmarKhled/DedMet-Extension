@@ -19,7 +19,16 @@
     "512": "/icons/512.png",
     "1024": "/icons/1024.png"
   },
-  "permissions": ["webRequest", "tabs"],
+  "action": {
+    "default_popup": "/popup/index.html",
+    "default_icon": {
+      "16": "/icons/16.png",
+      "32": "/icons/32.png",
+      "48": "/icons/48.png",
+      "128": "/icons/128.png"
+    }
+  },
+  "permissions": ["webRequest", "tabs", "storage"],
   "host_permissions": ["*://courses.nu.edu.eg/my/index.php"],
   "background": {
     "matches": ["*://courses.nu.edu.eg/my/index.php"],

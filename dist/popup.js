@@ -21468,6 +21468,184 @@ var XhrIo = esm.XhrIo=X;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/popup/main.scss":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/popup/main.scss ***!
+  \**********************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ "./node_modules/css-loader/dist/runtime/noSourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --scienceBlue: #0066CC;\n  --scienceBlue-100: #64A3E2;\n  --scienceBlue-200: #4993DD;\n  --scienceBlue-300: #2F83D7;\n  --scienceBlue-400: #1774D1;\n  --scienceBlue-500: #005AB5;\n  --scienceBlue-600: #004F9E;\n  --scienceBlue-700: #004488;\n  --scienceBlue-800: #003871;\n  --denimBlue: #71bfff;\n  --denimBlue-100: #B2D8F5;\n  --denimBlue-200: #A3D0F3;\n  --denimBlue-300: #95C9F1;\n  --denimBlue-400: #86C1EF;\n  --denimBlue-500: #6BA6D2;\n  --denimBlue-600: #5E91B8;\n  --denimBlue-700: #507C9E;\n  --denimBlue-800: #436783;\n  --lightNavy: #184c7f;\n  --lightNavy-100: #6392BB;\n  --lightNavy-200: #4C80AD;\n  --lightNavy-300: #376F9F;\n  --lightNavy-400: #255F92;\n  --lightNavy-500: #124775;\n  --lightNavy-600: #103E67;\n  --lightNavy-700: #0E3558;\n  --lightNavy-800: #0B2C49;\n  --lilyWhite: #ebf6ff;\n  --lilyWhite-100: #f6fcff;\n  --lilyWhite-200: #CEDCE2;\n  --lilyWhite-300: #B4C0C6;\n  --lilyWhite-400: #9AA5AA;\n  --lilyWhite-500: #80898D;\n}\n\nhtml, body {\n  font-family: \"Work Sans\", Helvetica, Verdana, Garamond, sans-serif, \"Times New Roman\", serif;\n  background-color: var(--lilyWhite);\n  width: 100%;\n  padding: 0;\n  margin: 0;\n}\n\nbody {\n  padding: 0.6rem 0.2rem;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\n* {\n  margin: 0;\n}\n\np,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nsmall {\n  color: var(--lightNavy);\n}\n\nh1 {\n  font-size: clamp(2.5rem, 5vw, 3.125rem);\n  font-weight: 800;\n}\n\nh2 {\n  font-size: clamp(1.857rem, 4vw, 2.5rem);\n  font-weight: 700;\n}\n\nh3 {\n  font-size: clamp(1.75rem, 3vw, 2rem);\n  font-weight: 700;\n}\n\nh4 {\n  font-size: clamp(1.375rem, 3vw, 1.75rem);\n  font-weight: 600;\n}\n\nh5 {\n  font-size: clamp(1.25rem, 3vw, 1.5rem);\n  font-weight: 500;\n}\n\nh6 {\n  font-size: 1.3rem;\n  font-weight: 500;\n}\n\np, label {\n  font-size: 0.9rem;\n  font-weight: 400;\n}\n\n.light, input[type=text]::placeholder, input[type=email]::placeholder, input[type=tel]::placeholder, input[type=number]::placeholder {\n  font-weight: 300;\n}\n\n.regular {\n  font-weight: 400;\n}\n\n.medium, input[type=text], input[type=email], input[type=tel], input[type=number] {\n  font-weight: 600;\n}\n\n.bold {\n  font-weight: 700;\n}\n\ninput, select {\n  border: none;\n  max-width: 100%;\n}\n\nlabel {\n  width: fit-content;\n}\n\ninput[type=text], input[type=email], input[type=tel], input[type=number] {\n  border: var(--lightNavy-300) solid 1px;\n  border-radius: 5px;\n  padding: 0.3rem 0.8rem;\n  color: var(--lightNavy-800);\n}\ninput[type=text]::selection, input[type=email]::selection, input[type=tel]::selection, input[type=number]::selection {\n  background-color: var(--denimBlue);\n  color: var(--lightNavy-800);\n}\ninput[type=text]::placeholder, input[type=email]::placeholder, input[type=tel]::placeholder, input[type=number]::placeholder {\n  font-size: 13px;\n}\ninput[type=text]:active, input[type=text]:focus, input[type=email]:active, input[type=email]:focus, input[type=tel]:active, input[type=tel]:focus, input[type=number]:active, input[type=number]:focus {\n  outline: none;\n  box-shadow: 0 0 0 0.14rem var(--denimBlue-100);\n}\n\nbutton {\n  background: none;\n  border: none;\n  cursor: pointer;\n}\n\n.btn {\n  display: inline-block;\n  padding: 10px 20px;\n  width: fit-content;\n  font-size: 15px;\n  font-weight: 600;\n  border-radius: 4px;\n  transition: all 350ms;\n  background: none;\n}\n.btn:hover {\n  opacity: 0.9;\n}\n.btn:active, .btn:focus {\n  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);\n  color: #fff !important;\n  outline: none;\n}\n\n.btn-primary {\n  background-color: var(--scienceBlue);\n  color: #fff;\n}\n.btn-primary:active {\n  box-shadow: 0 0 0 0.25rem var(--scienceBlue-100);\n}\n.btn-primary:disabled {\n  background-color: var(--lilyWhite-500);\n  cursor: default;\n}\n.btn-primary:disabled:hover {\n  opacity: 1;\n}\n\n.spinner {\n  display: block;\n  margin: auto;\n  width: 20px;\n  height: 20px;\n  position: relative;\n  text-align: center;\n  -webkit-animation: sk-rotate 2s infinite linear;\n  animation: sk-rotate 2s infinite linear;\n}\n\n.dot1, .dot2 {\n  width: 60%;\n  height: 60%;\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  background-color: var(--scienceBlue-300);\n  border-radius: 100%;\n  -webkit-animation: sk-bounce 2s infinite ease-in-out;\n  animation: sk-bounce 2s infinite ease-in-out;\n}\n\n.dot2 {\n  top: auto;\n  bottom: 0;\n  -webkit-animation-delay: -1s;\n  animation-delay: -1s;\n}\n\n@-webkit-keyframes sk-rotate {\n  100% {\n    -webkit-transform: rotate(360deg);\n  }\n}\n@keyframes sk-rotate {\n  100% {\n    transform: rotate(360deg);\n    -webkit-transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes sk-bounce {\n  0%, 100% {\n    -webkit-transform: scale(0);\n  }\n  50% {\n    -webkit-transform: scale(1);\n  }\n}\n@keyframes sk-bounce {\n  0%, 100% {\n    transform: scale(0);\n    -webkit-transform: scale(0);\n  }\n  50% {\n    transform: scale(1);\n    -webkit-transform: scale(1);\n  }\n}\n.overlay {\n  z-index: 7;\n  position: absolute;\n  background-color: rgba(0, 70, 128, 0.1411764706);\n  border-radius: 10px;\n  width: 104%;\n  height: 104%;\n  transform: translate(-2%, -2%);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/popup/popup.scss":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/popup/popup.scss ***!
+  \***********************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ "./node_modules/css-loader/dist/runtime/noSourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "main {\n  margin-top: 0.4rem;\n}\n\nlabel {\n  font-size: 1rem;\n  margin-bottom: 0.3rem;\n}\n\nheader {\n  display: block;\n}\n\ninput[type=submit] {\n  cursor: pointer;\n}\n\nform#licenseForm {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 0 0.5rem;\n  display: none;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+
+      content += cssWithMappingToString(item);
+
+      if (needLayer) {
+        content += "}";
+      }
+
+      if (item[2]) {
+        content += "}";
+      }
+
+      if (item[4]) {
+        content += "}";
+      }
+
+      return content;
+    }).join("");
+  }; // import a list of modules into the list
+
+
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
+  \**************************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (i) {
+  return i[1];
+};
+
+/***/ }),
+
 /***/ "./node_modules/firebase/app/dist/index.esm.js":
 /*!*****************************************************!*\
   !*** ./node_modules/firebase/app/dist/index.esm.js ***!
@@ -21621,6 +21799,420 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/popup/main.scss":
+/*!*****************************!*\
+  !*** ./src/popup/main.scss ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./main.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/popup/main.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/popup/popup.scss":
+/*!******************************!*\
+  !*** ./src/popup/popup.scss ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_popup_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./popup.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/popup/popup.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_popup_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_popup_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_popup_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_popup_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+
+
+var stylesInDOM = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+
+  return updater;
+}
+
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+/***/ ((module) => {
+
+
+
+var memo = {};
+/* istanbul ignore next  */
+
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+
+    memo[target] = styleTarget;
+  }
+
+  return memo[target];
+}
+/* istanbul ignore next  */
+
+
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+
+  target.appendChild(style);
+}
+
+module.exports = insertBySelector;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+
+module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+
+  var needLayer = typeof obj.layer !== "undefined";
+
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+
+  css += obj.css;
+
+  if (needLayer) {
+    css += "}";
+  }
+
+  if (obj.media) {
+    css += "}";
+  }
+
+  if (obj.supports) {
+    css += "}";
+  }
+
+  var sourceMap = obj.sourceMap;
+
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  options.styleTagTransform(css, styleElement, options.options);
+}
+
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+
+  styleElement.parentNode.removeChild(styleElement);
+}
+/* istanbul ignore next  */
+
+
+function domAPI(options) {
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+
+module.exports = styleTagTransform;
+
+/***/ }),
+
 /***/ "./src/popup/validateKey.ts":
 /*!**********************************!*\
   !*** ./src/popup/validateKey.ts ***!
@@ -21705,39 +22297,6 @@ var validateKey = function (key) { return __awaiter(void 0, void 0, void 0, func
     });
 }); };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (validateKey);
-
-
-/***/ }),
-
-/***/ "./src/timelineFetchOptions.ts":
-/*!*************************************!*\
-  !*** ./src/timelineFetchOptions.ts ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (cookie, month) {
-    var date = new Date();
-    return {
-        headers: {
-            accept: "application/json, text/javascript, */*; q=0.01",
-            "content-type": "application/json",
-            Cookie: "MoodleSession=".concat(cookie),
-            Connection: "keep-alive",
-        },
-        referrer: "https://courses.nu.edu.eg/my/index.php",
-        referrerPolicy: "strict-origin-when-cross-origin",
-        body: "[{\"index\":0,\"methodname\":\"core_calendar_get_calendar_monthly_view\",\"args\":{\"year\":".concat(date.getFullYear(), ",\"month\":").concat(
-        // date.getMonth() + 1
-        month, ",\"courseid\":1,\"categoryid\":0,\"includenavigation\":true,\"mini\":true}}]"),
-        method: "POST",
-        mode: "cors",
-        credentials: "include",
-    };
-});
 
 
 /***/ }),
@@ -23361,7 +23920,7 @@ function setUserLogHandler(logCallback, options) {
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
+/******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
@@ -23374,6 +23933,18 @@ function setUserLogHandler(logCallback, options) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -23418,12 +23989,13 @@ function setUserLogHandler(logCallback, options) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************!*\
-  !*** ./src/bg.ts ***!
-  \*******************/
+/*!****************************!*\
+  !*** ./src/popup/popup.ts ***!
+  \****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _popup_validateKey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popup/validateKey */ "./src/popup/validateKey.ts");
-/* harmony import */ var _timelineFetchOptions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./timelineFetchOptions */ "./src/timelineFetchOptions.ts");
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ "./src/popup/main.scss");
+/* harmony import */ var _popup_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./popup.scss */ "./src/popup/popup.scss");
+/* harmony import */ var _validateKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./validateKey */ "./src/popup/validateKey.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -23462,149 +24034,91 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 };
 
 
-var tabId;
-//
-var sessKeyFound = false;
-var licenseKey = "";
-// Listener For Http Requests
-var listener = function (_a) {
-    var url = _a.url;
-    console.log("listening");
-    if (url.includes("sesskey") && !sessKeyFound) {
-        sessKeyFound = true;
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            tabId = tabs[0].id;
-            console.log(tabId);
-        });
-        // Getting Session Key
-        var sessKey_1 = url.split("=")[1].split("&")[0];
-        var user = (0,_popup_validateKey__WEBPACK_IMPORTED_MODULE_0__["default"])(licenseKey);
-        if (user != null) {
-            setTimeout(function () {
-                // Fetching the current chrome tab
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                    // Sending a message to that tab
-                    chrome.tabs.sendMessage(tabId, {
-                        key: sessKey_1,
-                        type: "sesskey",
-                    }, function (res) {
-                        console.log(res);
-                        fetchTimelineData(sessKey_1, res.cookie);
-                        return Promise.resolve("Dummy response to keep the console quiet");
-                    });
-                });
-            }, 200);
-        }
-        else {
-            setTimeout(function () {
-                // Fetching the current chrome tab
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                    // Sending a message to that tab
-                    chrome.tabs.sendMessage(tabId, {
-                        type: "invalidLicense",
-                    }, function (res) {
-                        console.log(res);
-                        return Promise.resolve("Dummy response to keep the console quiet");
-                    });
-                });
-            }, 200);
-        }
-    }
+
+var date = new Date();
+var loadingSpinner = document.getElementById("spinner");
+var licenseForm = document.getElementById("licenseForm");
+var licensed = document.getElementById("licensed");
+var logout = function () {
+    chrome.storage.sync.remove("key");
+    initPopup();
 };
-var fetchTimelineData = function (sesskey, cookie) { return __awaiter(void 0, void 0, void 0, function () {
-    var date, months, timelineData, index, month, json, res;
+var login = function (e) { return __awaiter(void 0, void 0, void 0, function () {
+    var inputField, licenseKey, user;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                chrome.webRequest.onResponseStarted.removeListener(listener);
-                sessKeyFound = false;
-                date = new Date();
-                months = [date.getMonth() + 1, date.getMonth() + 2];
-                timelineData = [];
-                months.forEach(function (month) { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
-                    return [2 /*return*/];
-                }); }); });
-                index = 0;
-                _a.label = 1;
+                e.preventDefault();
+                inputField = document.getElementById("licenseKey");
+                licenseKey = inputField.value;
+                if (!licenseKey.replace(/ /g, "")) return [3 /*break*/, 2];
+                return [4 /*yield*/, (0,_validateKey__WEBPACK_IMPORTED_MODULE_2__["default"])(licenseKey)];
             case 1:
-                if (!(index < months.length)) return [3 /*break*/, 5];
-                month = months[index];
-                return [4 /*yield*/, fetch("https://courses.nu.edu.eg/lib/ajax/service.php?sesskey=".concat(sesskey, "&info=core_calendar_get_calendar_monthly_view"), (0,_timelineFetchOptions__WEBPACK_IMPORTED_MODULE_1__["default"])(cookie, month))];
+                user = _a.sent();
+                if (user) {
+                    chrome.storage.sync.set({ key: licenseKey });
+                    initPopup();
+                }
+                else {
+                    console.log("Invalid or expired license key");
+                    alert("Invalid or expired license key");
+                }
+                return [3 /*break*/, 3];
             case 2:
-                json = _a.sent();
-                return [4 /*yield*/, json.json()];
-            case 3:
-                res = _a.sent();
-                timelineData.push(res[0]);
-                _a.label = 4;
-            case 4:
-                index++;
-                return [3 /*break*/, 1];
-            case 5:
-                console.log(timelineData);
-                // setTimeout(() => {
-                //   chrome.webRequest.onBeforeRequest.addListener(listener, {
-                //     urls: ["*://courses.nu.edu.eg/*"],
-                //   });
-                // }, 200);
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                    console.log("starts");
-                    if (tabId == tabs[0].id) {
-                        console.log("matches");
-                        chrome.tabs.sendMessage(tabs[0].id, {
-                            timeline: timelineData,
-                            type: "timeline",
-                        });
-                    }
-                    else {
-                        console.log("doesn't match");
-                        var onActivated_1 = function (activatedTab) {
-                            if (activatedTab.tabId == tabId) {
-                                chrome.tabs.onActivated.removeListener(onActivated_1);
-                                chrome.tabs.sendMessage(tabId, {
-                                    timeline: timelineData,
-                                    type: "timeline",
-                                });
-                            }
-                        };
-                        chrome.tabs.onActivated.addListener(onActivated_1);
-                    }
-                });
-                return [2 /*return*/];
+                alert("Enter a valid value");
+                console.log("Enter a valid value");
+                _a.label = 3;
+            case 3: return [2 /*return*/];
         }
     });
 }); };
-chrome.runtime.onMessage.addListener(function (_a, s, send) {
-    var msg = _a.msg;
-    console.log(msg);
-    chrome.webRequest.onBeforeRequest.removeListener(listener);
-    if (msg == "/my/index.php") {
-        chrome.storage.sync.get(null).then(function (res) {
-            if (res.key) {
-                console.log("init");
-                licenseKey = res.key;
-                chrome.webRequest.onResponseStarted.addListener(listener, {
-                    urls: ["*://courses.nu.edu.eg/*"],
-                });
-            }
-            else {
-                setTimeout(function () {
-                    // Fetching the current chrome tab
-                    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                        // Sending a message to that tab
-                        chrome.tabs.sendMessage(tabs[0].id, {
-                            type: "invalidLicense",
-                        }, function (res) {
-                            console.log(res);
-                            return Promise.resolve("Dummy response to keep the console quiet");
-                        });
-                    });
-                }, 200);
-            }
-        });
-    }
-    send("hello");
-});
+var controlLoadingSpinner = function (value) {
+    return (loadingSpinner.style.display = value);
+};
+var initPopup = function () { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        chrome.storage.sync.get("key").then(function (value) { return __awaiter(void 0, void 0, void 0, function () {
+            var user, s;
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        licenseForm.style.display = "none";
+                        licensed.style.display = "none";
+                        controlLoadingSpinner("block");
+                        if (!!value.key) return [3 /*break*/, 1];
+                        licenseForm.style.display = "flex";
+                        licensed.style.display = "none";
+                        controlLoadingSpinner("none");
+                        licenseForm === null || licenseForm === void 0 ? void 0 : licenseForm.addEventListener("submit", login);
+                        return [3 /*break*/, 3];
+                    case 1: return [4 /*yield*/, (0,_validateKey__WEBPACK_IMPORTED_MODULE_2__["default"])(value.key)];
+                    case 2:
+                        user = _b.sent();
+                        console.log("user", user);
+                        if (user) {
+                            controlLoadingSpinner("none");
+                            licenseForm.style.display = "none";
+                            licensed.style.display = "block";
+                            s = new Date(user.expiresAt).toLocaleDateString("en-US");
+                            document.getElementById("content").innerHTML = "License key: ".concat(user.licenseKey, " - valid till: ").concat(s);
+                            (_a = document.getElementById("logout")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", logout);
+                        }
+                        else {
+                            chrome.storage.sync.remove("key");
+                            licenseForm.style.display = "flex";
+                            licensed.style.display = "none";
+                            controlLoadingSpinner("none");
+                        }
+                        _b.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        }); });
+        return [2 /*return*/];
+    });
+}); };
+initPopup();
 
 })();
 

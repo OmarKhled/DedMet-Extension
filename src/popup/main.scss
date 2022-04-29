@@ -1,0 +1,186 @@
+// Typography - Work Sans
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --scienceBlue: #0066CC;
+  --scienceBlue-100: #64A3E2;
+  --scienceBlue-200: #4993DD;
+  --scienceBlue-300: #2F83D7;
+  --scienceBlue-400: #1774D1;
+  --scienceBlue-500: #005AB5;
+  --scienceBlue-600: #004F9E;
+  --scienceBlue-700: #004488;
+  --scienceBlue-800: #003871;
+
+  // Denim Blue
+  --denimBlue: #71bfff;
+  --denimBlue-100: #B2D8F5;
+  --denimBlue-200: #A3D0F3;
+  --denimBlue-300: #95C9F1;
+  --denimBlue-400: #86C1EF;
+  --denimBlue-500: #6BA6D2;
+  --denimBlue-600: #5E91B8;
+  --denimBlue-700: #507C9E;
+  --denimBlue-800: #436783;
+
+  // Light Navy
+  --lightNavy: #184c7f;
+  --lightNavy-100: #6392BB;
+  --lightNavy-200: #4C80AD;
+  --lightNavy-300: #376F9F;
+  --lightNavy-400: #255F92;
+  --lightNavy-500: #124775;
+  --lightNavy-600: #103E67;
+  --lightNavy-700: #0E3558;
+  --lightNavy-800: #0B2C49;
+
+  // Lily White
+  --lilyWhite: #ebf6ff;
+  --lilyWhite-100: #f6fcff;
+  --lilyWhite-200: #CEDCE2;
+  --lilyWhite-300: #B4C0C6;
+  --lilyWhite-400: #9AA5AA;
+  --lilyWhite-500: #80898D;
+}
+html, body {
+  font-family: "Work Sans", Helvetica, Verdana, Garamond, sans-serif,
+    "Times New Roman", serif;
+  background-color: var(--lilyWhite);
+  width: 100%;
+  padding: 0; margin: 0;
+}
+body {
+  padding: 0.6rem 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small {
+  color: var(--lightNavy);
+}
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.125rem);
+  font-weight: 800;
+}
+h2 {
+  font-size: clamp(1.857rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+h3 {
+  font-size: clamp(1.75rem, 3vw, 2rem);
+  font-weight: 700;
+}
+h4 {
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  font-weight: 600;
+}
+h5 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 500;
+}
+h6 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+p, label {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+
+input, select {
+  border: none;
+  // margin: 0.5rem 0;
+  max-width: 100%;
+}
+
+label {
+  width: fit-content;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+  border: var(--lightNavy-300) solid 1px;
+  border-radius: 5px;
+  padding: 0.3rem 0.8rem;
+  color: var(--lightNavy-800);
+  @extend .medium;
+  &::selection {
+    background-color: var(--denimBlue);
+    color: var(--lightNavy-800);
+  }
+  &::placeholder {
+    @extend .light;
+    font-size: 13px;
+  }
+  &:active, &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.14rem var(--denimBlue-100);
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  width: fit-content;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 350ms;
+  background: none;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active, &:focus {
+    box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
+    color: #fff !important;
+    outline: none;
+  }
+}
+.btn-primary {
+  background-color: var(--scienceBlue);
+  color: #fff;
+  &:active {
+    box-shadow: 0 0 0 0.25rem var(--scienceBlue-100);
+  }
+  &:disabled {
+    background-color: var(--lilyWhite-500);
+    cursor: default;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@import "./loadingSpinner";

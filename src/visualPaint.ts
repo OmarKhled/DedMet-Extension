@@ -1,7 +1,7 @@
 import Timeline from "./timelineInterface";
 
-import timelineContainer from "./html/Timeline.ejs";
-import timelineEvents from "./html/EventElement.ejs";
+import timelineContainer from "./ejs/Timeline.ejs";
+import timelineEvents from "./ejs/EventElement.ejs";
 
 export const visualPaint = (timeline: Timeline): void => {
   // * Fetching the element before which the timeline will be added
@@ -63,7 +63,7 @@ export const visualPaint = (timeline: Timeline): void => {
     : "";
 };
 
-export const initTimeline = () => {
+export const initTimeline = (invalid?: boolean) => {
   // * Adding the container in case no aside elements exists
   if (!document.querySelector("aside#block-region-side-post")) {
     const aside: HTMLElement = document.createElement("aside");
@@ -90,4 +90,8 @@ export const initTimeline = () => {
       ? calendar
       : document.querySelector("aside#block-region-side-post a:first-child")
   );
+  if (invalid) {
+    document.getElementById("dedmet")!.innerHTML =
+      "Invalid or expired License Key";
+  }
 };

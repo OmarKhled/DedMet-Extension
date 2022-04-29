@@ -1,3 +1,4 @@
+import validateKey from "./popup/validateKey";
 import timelineFetchOptions from "./timelineFetchOptions";
 
 interface requestDetails {
@@ -6,9 +7,10 @@ interface requestDetails {
 let tabId: number;
 //
 let sessKeyFound: boolean = false;
+let licenseKey = "";
 // Listener For Http Requests
 const listener = ({ url }: requestDetails): void => {
-  console.log("first");
+  console.log("listening");
   if (url.includes("sesskey") && !sessKeyFound) {
     sessKeyFound = true;
     chrome.tabs.query(
@@ -20,34 +22,59 @@ const listener = ({ url }: requestDetails): void => {
     );
     // Getting Session Key
     const sessKey: string = url.split("=")[1].split("&")[0];
-    setTimeout(() => {
-      // Fetching the current chrome tab
-      chrome.tabs.query(
-        { active: true, currentWindow: true },
-        (tabs: chrome.tabs.Tab[]) => {
-          // Sending a message to that tab
-          chrome.tabs.sendMessage(
-            tabId,
-            {
-              key: sessKey,
-              type: "sesskey",
-            },
-            (res) => {
-              console.log(res);
-              fetchTimelineData(sessKey, res.cookie);
-              return Promise.resolve(
-                "Dummy response to keep the console quiet"
-              );
-            }
-          );
-        }
-      );
-    }, 200);
+    const user = validateKey(licenseKey);
+    if (user != null) {
+      setTimeout(() => {
+        // Fetching the current chrome tab
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          (tabs: chrome.tabs.Tab[]) => {
+            // Sending a message to that tab
+            chrome.tabs.sendMessage(
+              tabId,
+              {
+                key: sessKey,
+                type: "sesskey",
+              },
+              (res) => {
+                console.log(res);
+                fetchTimelineData(sessKey, res.cookie);
+                return Promise.resolve(
+                  "Dummy response to keep the console quiet"
+                );
+              }
+            );
+          }
+        );
+      }, 200);
+    } else {
+      setTimeout(() => {
+        // Fetching the current chrome tab
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          (tabs: chrome.tabs.Tab[]) => {
+            // Sending a message to that tab
+            chrome.tabs.sendMessage(
+              tabId,
+              {
+                type: "invalidLicense",
+              },
+              (res) => {
+                console.log(res);
+                return Promise.resolve(
+                  "Dummy response to keep the console quiet"
+                );
+              }
+            );
+          }
+        );
+      }, 200);
+    }
   }
 };
 
 const fetchTimelineData = async (sesskey: string, cookie: string) => {
-  chrome.webRequest.onBeforeRequest.removeListener(listener);
+  chrome.webRequest.onResponseStarted.removeListener(listener);
   sessKeyFound = false;
   const date: Date = new Date();
   const months: number[] = [date.getMonth() + 1, date.getMonth() + 2];
@@ -102,8 +129,36 @@ chrome.runtime.onMessage.addListener(({ msg }: { msg: string }, s, send) => {
   console.log(msg);
   chrome.webRequest.onBeforeRequest.removeListener(listener);
   if (msg == "/my/index.php") {
-    chrome.webRequest.onBeforeRequest.addListener(listener, {
-      urls: ["*://courses.nu.edu.eg/*"],
+    chrome.storage.sync.get(null).then((res) => {
+      if (res.key) {
+        console.log("init");
+        licenseKey = res.key;
+        chrome.webRequest.onResponseStarted.addListener(listener, {
+          urls: ["*://courses.nu.edu.eg/*"],
+        });
+      } else {
+        setTimeout(() => {
+          // Fetching the current chrome tab
+          chrome.tabs.query(
+            { active: true, currentWindow: true },
+            (tabs: chrome.tabs.Tab[]) => {
+              // Sending a message to that tab
+              chrome.tabs.sendMessage(
+                tabs[0].id as number,
+                {
+                  type: "invalidLicense",
+                },
+                (res) => {
+                  console.log(res);
+                  return Promise.resolve(
+                    "Dummy response to keep the console quiet"
+                  );
+                }
+              );
+            }
+          );
+        }, 200);
+      }
     });
   }
   send("hello");

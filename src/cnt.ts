@@ -15,7 +15,14 @@ chrome.runtime.onMessage.addListener((msg: Message, s, send) => {
     const cookie: string = document.cookie.split("=")[1];
     console.log(`Session ID: ${msg.key} & Cookie : ${cookie}`);
     send({ cookie });
-    initTimeline();
+    setTimeout(() => {
+      initTimeline();
+    }, 300);
+  } else if (msg.type == "invalidLicense") {
+    console.log("invalidLicense");
+    setTimeout(() => {
+      initTimeline(true);
+    }, 300);
   } else {
     const res: { data: Timeline; error: boolean }[] = msg.timeline;
     res.forEach((month) => {
