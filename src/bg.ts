@@ -9,7 +9,7 @@ let tabId: number;
 let sessKeyFound: boolean = false;
 let licenseKey = "";
 // Listener For Http Requests
-const listener = ({ url }: requestDetails): void => {
+const listener = async ({ url }: requestDetails) => {
   console.log("listening");
   if (url.includes("sesskey") && !sessKeyFound) {
     sessKeyFound = true;
@@ -22,7 +22,8 @@ const listener = ({ url }: requestDetails): void => {
     );
     // Getting Session Key
     const sessKey: string = url.split("=")[1].split("&")[0];
-    const user = validateKey(licenseKey);
+    const user = await validateKey(licenseKey);
+    console.log(user);
     if (user != null) {
       setTimeout(() => {
         // Fetching the current chrome tab
@@ -127,8 +128,8 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
 
 chrome.runtime.onMessage.addListener(({ msg }: { msg: string }, s, send) => {
   console.log(msg);
-  chrome.webRequest.onBeforeRequest.removeListener(listener);
-  if (msg == "/my/index.php") {
+  chrome.webRequest.onResponseStarted.removeListener(listener);
+  if (msg.includes("my")) {
     chrome.storage.sync.get(null).then((res) => {
       if (res.key) {
         console.log("init");

@@ -6,7 +6,7 @@ const loadingSpinner = document.getElementById("spinner");
 const licenseForm = document.getElementById("licenseForm");
 const licensed = document.getElementById("licensed");
 
-chrome.storage.sync.set({ key: "6ae63270" });
+// chrome.storage.sync.set({ key: "6ae63270" });
 
 const logout = () => {
   chrome.storage.sync.remove("key");
@@ -14,6 +14,7 @@ const logout = () => {
 };
 
 const login = async (e: SubmitEvent) => {
+  console.log("submitted");
   e.preventDefault();
   const inputField = document.getElementById("licenseKey") as HTMLInputElement;
   const licenseKey = inputField.value;
@@ -62,6 +63,7 @@ const initPopup = async () => {
         licenseForm!.style.display = "flex";
         licensed!.style.display = "none";
         controlLoadingSpinner("none");
+        licenseForm?.addEventListener("submit", login);
       }
     }
   });

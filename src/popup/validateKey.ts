@@ -1,5 +1,17 @@
 import axios from "axios";
 
+// const { data } = await axios.post(
+//   "http://127.0.0.1/api/authKey",
+//   { key },
+//   {
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Access-Control-Allow-Origin": "*",
+//     },
+//     method: "POST",
+//   }
+// );
+
 const validateKey: (key: string) => Promise<{
   licenseKey: string;
   gender: string;
@@ -18,34 +30,28 @@ const validateKey: (key: string) => Promise<{
   order_id: string;
   coupon_savings: string;
   phone: string;
-}> = async (key) => {
-  const { data } = await axios.post(
-    "http://127.0.0.1/api/authKey",
-    { key },
-    {
+} | null> = async (key) => {
+  try {
+    const user = await fetch("https://dedmet.app/api/authKey", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
-      method: "POST",
+      body: JSON.stringify({
+        key: key,
+      }),
+      mode: "cors",
+    });
+    const data = await user.json();
+    console.log(data);
+    if (data.msg) {
+      return null;
+    } else {
+      return data.user;
     }
-  );
-  // const user = await fetch("http://127.0.0.1/api/authKey", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     "Access-Control-Allow-Origin": "*",
-  //   },
-  //   body: JSON.stringify({
-  //     key: key,
-  //   }),
-  //   mode: "no-cors",
-  // });
-  // const data = await user.json();
-  if (data.msg) {
+  } catch (error) {
+    console.log(error);
     return null;
-  } else {
-    return data.user;
   }
 };
 
