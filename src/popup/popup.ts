@@ -1,13 +1,12 @@
 import "./main.scss";
 import "./popup.scss";
-import { DocumentData } from "firebase/firestore";
 import validateKey from "./validateKey";
-
-const date = new Date();
 
 const loadingSpinner = document.getElementById("spinner");
 const licenseForm = document.getElementById("licenseForm");
 const licensed = document.getElementById("licensed");
+
+chrome.storage.sync.set({ key: "6ae63270" });
 
 const logout = () => {
   chrome.storage.sync.remove("key");
@@ -47,7 +46,7 @@ const initPopup = async () => {
       controlLoadingSpinner("none");
       licenseForm?.addEventListener("submit", login);
     } else {
-      const user: DocumentData = await validateKey(value.key);
+      const user = await validateKey(value.key);
       console.log("user", user);
       if (user) {
         controlLoadingSpinner("none");

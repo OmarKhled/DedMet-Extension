@@ -1,39 +1,52 @@
-import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  where,
-  query,
-  getDocs,
-  DocumentData,
-} from "firebase/firestore";
+import axios from "axios";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDCarRqgo2HNHPWHza6Vp33-OeyLH9G4vQ",
-  authDomain: "dedmet-26c91.firebaseapp.com",
-  projectId: "dedmet-26c91",
-  storageBucket: "dedmet-26c91.appspot.com",
-  messagingSenderId: "1000978163574",
-  appId: "1:1000978163574:web:2dc943f96690368160fc57",
-  measurementId: "G-ET1J7B1BS5",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-const validateKey: (key: string) => DocumentData = async (key) => {
-  const date = new Date();
-  const usersRef = collection(db, "users");
-  const q = query(usersRef, where("licenseKey", "==", key));
-  const res = await getDocs(q);
-  if (res.size > 0) {
-    const user = res.docs[0].data();
-    console.log(user);
-    if (user.expiresAt > date.getTime()) {
-      return user;
+const validateKey: (key: string) => Promise<{
+  licenseKey: string;
+  gender: string;
+  registeredAt: number;
+  name: string;
+  email: string;
+  "Academic Year": string;
+  expiresAt: number;
+  major: string;
+  faculty: string;
+  coupon: string;
+  currency: string;
+  "NU ID": string;
+  price: string;
+  event_time: string;
+  order_id: string;
+  coupon_savings: string;
+  phone: string;
+}> = async (key) => {
+  const { data } = await axios.post(
+    "http://127.0.0.1/api/authKey",
+    { key },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      method: "POST",
     }
+  );
+  // const user = await fetch("http://127.0.0.1/api/authKey", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     "Access-Control-Allow-Origin": "*",
+  //   },
+  //   body: JSON.stringify({
+  //     key: key,
+  //   }),
+  //   mode: "no-cors",
+  // });
+  // const data = await user.json();
+  if (data.msg) {
+    return null;
+  } else {
+    return data.user;
   }
-  return null;
 };
 
 export default validateKey;
