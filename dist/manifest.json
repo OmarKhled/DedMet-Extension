@@ -1,6 +1,6 @@
 {
   "name": "dedmet",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "manifest_version": 2,
   "description": "DedMet is an extension that helps Nile University Students in tracking deadlines and assesments",
   "content_scripts": [
@@ -23,7 +23,7 @@
     "default_icon": {
       "16": "/icons/16.png",
       "32": "/icons/32.png",
-      "48": "/icons/48.png",
+      "48": "/icons/64.png",
       "128": "/icons/128.png"
     },
     "default_title": "DedMet",
@@ -38,11 +38,5 @@
   ],
   "background": {
     "scripts": ["bg.js"]
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "o.abuelfetohahmed@nu.edu.eg",
-      "strict_min_version": "42.0"
-    }
   }
 }
