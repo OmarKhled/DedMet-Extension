@@ -125,7 +125,7 @@ chrome.runtime.onMessage.addListener(({ msg }: { msg: string }, s, send) => {
   console.log(msg);
   chrome.webRequest.onResponseStarted.removeListener(listener);
   if (msg.includes("my")) {
-    chrome.storage.sync.get(null).then((res) => {
+    chrome.storage.sync.get(null, (res) => {
       if (res.key) {
         console.log("init");
         licenseKey = res.key;

@@ -37,7 +37,7 @@ const controlLoadingSpinner = (value: string) =>
   (loadingSpinner!.style.display = value);
 
 const initPopup = async () => {
-  chrome.storage.sync.get("key").then(async (value: { key?: string }) => {
+  chrome.storage.sync.get("key", async (value: { key?: string }) => {
     licenseForm!.style.display = "none";
     licensed!.style.display = "none";
     controlLoadingSpinner("block");
