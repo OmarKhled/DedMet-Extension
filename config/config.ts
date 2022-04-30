@@ -1,3 +1,3 @@
 export default {
-  NODE_ENV: "development",
+  domain: "https://dedmet.app",
 };

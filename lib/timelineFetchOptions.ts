@@ -9,10 +9,7 @@ export default (cookie: string, month: number): any => {
     },
     referrer: "https://courses.nu.edu.eg/my/index.php",
     referrerPolicy: "strict-origin-when-cross-origin",
-    body: `[{"index":0,"methodname":"core_calendar_get_calendar_monthly_view","args":{"year":${date.getFullYear()},"month":${
-      // date.getMonth() + 1
-      month
-    },"courseid":1,"categoryid":0,"includenavigation":true,"mini":true}}]`,
+    body: `[{"index":0,"methodname":"core_calendar_get_calendar_monthly_view","args":{"year":${date.getFullYear()},"month":${month},"courseid":1,"categoryid":0,"includenavigation":true,"mini":true}}]`,
     method: "POST",
     mode: "cors",
     credentials: "include",

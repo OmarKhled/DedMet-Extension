@@ -1,7 +1,7 @@
 import Timeline from "./timelineInterface";
 
-import timelineContainer from "./ejs/Timeline.ejs";
-import timelineEvents from "./ejs/EventElement.ejs";
+import timelineContainer from "../src/ejs/Timeline.ejs";
+import timelineEvents from "../src/ejs/EventElement.ejs";
 
 export const visualPaint = (timeline: Timeline): void => {
   // * Fetching the element before which the timeline will be added

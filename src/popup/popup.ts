@@ -1,5 +1,5 @@
-import "./main.scss";
-import "./popup.scss";
+import "./styles/main.scss";
+import "./styles/popup.scss";
 import validateKey from "./validateKey";
 
 const loadingSpinner = document.getElementById("spinner");

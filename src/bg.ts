@@ -1,5 +1,5 @@
 import validateKey from "./popup/validateKey";
-import timelineFetchOptions from "./timelineFetchOptions";
+import timelineFetchOptions from "../lib/timelineFetchOptions";
 
 interface requestDetails {
   url: string;
@@ -9,6 +9,25 @@ let tabId: number;
 let sessKeyFound: boolean = false;
 let licenseKey = "";
 // Listener For Http Requests
+
+const sendMessage = ({
+  payload,
+  callback,
+  tabId,
+}: {
+  payload: any;
+  callback: (res: any) => any;
+  tabId: number;
+}) => {
+  chrome.tabs.query(
+    { active: true, currentWindow: true },
+    (tabs: chrome.tabs.Tab[]) => {
+      // Sending a message to that tab
+      chrome.tabs.sendMessage(tabId, payload, callback);
+    }
+  );
+};
+
 const listener = async ({ url }: requestDetails) => {
   console.log("listening");
   if (url.includes("sesskey") && !sessKeyFound) {
@@ -26,49 +45,31 @@ const listener = async ({ url }: requestDetails) => {
     console.log(user);
     if (user != null) {
       setTimeout(() => {
-        // Fetching the current chrome tab
-        chrome.tabs.query(
-          { active: true, currentWindow: true },
-          (tabs: chrome.tabs.Tab[]) => {
-            // Sending a message to that tab
-            chrome.tabs.sendMessage(
-              tabId,
-              {
-                key: sessKey,
-                type: "sesskey",
-              },
-              (res) => {
-                console.log(res);
-                fetchTimelineData(sessKey, res.cookie);
-                return Promise.resolve(
-                  "Dummy response to keep the console quiet"
-                );
-              }
-            );
-          }
-        );
+        sendMessage({
+          payload: {
+            key: sessKey,
+            type: "sesskey",
+          },
+          tabId,
+          callback: (res) => {
+            console.log(res);
+            fetchTimelineData(sessKey, res.cookie);
+            return Promise.resolve("Dummy response to keep the console quiet");
+          },
+        });
       }, 200);
     } else {
       setTimeout(() => {
-        // Fetching the current chrome tab
-        chrome.tabs.query(
-          { active: true, currentWindow: true },
-          (tabs: chrome.tabs.Tab[]) => {
-            // Sending a message to that tab
-            chrome.tabs.sendMessage(
-              tabId,
-              {
-                type: "invalidLicense",
-              },
-              (res) => {
-                console.log(res);
-                return Promise.resolve(
-                  "Dummy response to keep the console quiet"
-                );
-              }
-            );
-          }
-        );
+        sendMessage({
+          payload: {
+            type: "invalidLicense",
+          },
+          tabId,
+          callback: (res) => {
+            console.log(res);
+            return Promise.resolve("Dummy response to keep the console quiet");
+          },
+        });
       }, 200);
     }
   }
@@ -92,12 +93,6 @@ const fetchTimelineData = async (sesskey: string, cookie: string) => {
     timelineData.push(res[0]);
   }
   console.log(timelineData);
-
-  // setTimeout(() => {
-  //   chrome.webRequest.onBeforeRequest.addListener(listener, {
-  //     urls: ["*://courses.nu.edu.eg/*"],
-  //   });
-  // }, 200);
 
   chrome.tabs.query(
     { active: true, currentWindow: true },
@@ -140,24 +135,18 @@ chrome.runtime.onMessage.addListener(({ msg }: { msg: string }, s, send) => {
       } else {
         setTimeout(() => {
           // Fetching the current chrome tab
-          chrome.tabs.query(
-            { active: true, currentWindow: true },
-            (tabs: chrome.tabs.Tab[]) => {
-              // Sending a message to that tab
-              chrome.tabs.sendMessage(
-                tabs[0].id as number,
-                {
-                  type: "invalidLicense",
-                },
-                (res) => {
-                  console.log(res);
-                  return Promise.resolve(
-                    "Dummy response to keep the console quiet"
-                  );
-                }
+          sendMessage({
+            payload: {
+              type: "invalidLicense",
+            },
+            tabId,
+            callback: (res) => {
+              console.log(res);
+              return Promise.resolve(
+                "Dummy response to keep the console quiet"
               );
-            }
-          );
+            },
+          });
         }, 200);
       }
     });

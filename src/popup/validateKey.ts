@@ -1,16 +1,4 @@
-import axios from "axios";
-
-// const { data } = await axios.post(
-//   "http://127.0.0.1/api/authKey",
-//   { key },
-//   {
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Access-Control-Allow-Origin": "*",
-//     },
-//     method: "POST",
-//   }
-// );
+import config from "../../config/config";
 
 const validateKey: (key: string) => Promise<{
   licenseKey: string;
@@ -32,7 +20,7 @@ const validateKey: (key: string) => Promise<{
   phone: string;
 } | null> = async (key) => {
   try {
-    const user = await fetch("https://dedmet.app/api/authKey", {
+    const user = await fetch(`${config.domain}/api/authKey`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,5 +1,5 @@
-import Timeline from "./timelineInterface";
-import { visualPaint, initTimeline } from "./visualPaint";
+import Timeline from "../lib/timelineInterface";
+import { visualPaint, initTimeline } from "../lib/visualPaint";
 
 interface Message {
   type: string;
